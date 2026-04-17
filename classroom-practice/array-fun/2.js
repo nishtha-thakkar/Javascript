@@ -119,6 +119,7 @@ console.log (" include function - to check the value : " , arr10);
 
 let arr13 = arr.find(x => x === 70);
 console.log (" find fun : " , arr13);
+console.log("--------------------------------------")
 
 
 // findindex

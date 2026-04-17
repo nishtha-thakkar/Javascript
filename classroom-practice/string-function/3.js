@@ -98,5 +98,5 @@ console.log("16. trimEnd() - Remove end space str.trimEnd()",string14);
 let string15 = str.concat(str1);
 console.log("17. concat() - Join strings str1.concat(str2)" , string15)
 
-
+console.log("--------------------------------------")
 
