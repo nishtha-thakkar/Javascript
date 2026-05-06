@@ -69,7 +69,7 @@ console.log(res2);
 
 console.log(" ----------------------------- ");
 
-//6. Arrow Function
+//6. Arrow Function 
 
 console.log("6. Arrow Function");
 
