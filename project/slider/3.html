@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style></style>
+  </head>
+  <body>
+    <nav class="bg-black h-[90px] text-white">
+      <div class="main-div flex items-center justify-between px-10">
+        <div class="img h-full w-[80px]">
+          <img
+            class="h-full w-full"
+            src="./imges/nature-img-icone-2.png"
+            alt=""
+          />
+        </div>
+        <div class="list flex gap-10 ">
+          <a class="hover:text-blue-500" href="">Home</a>
+          <a class="hover:text-blue-500" href="">About us</a>
+          <a class="hover:text-blue-500"href="">Contact</a>
+          <a class="hover:text-blue-500" href="">carrer</a>
+        </div>
+
+        <button id="btn">Click</button>
+      </div>
+    </nav>
+
+    <div id="box" class="text-center"></div>
+
+   <section class="relative w-full overflow-hidden">
+        <div class="swiper-slide">
+            <img src="./imges/nature-1.1.jpeg"
+                class="w-full h-[250px] md:h-[400px] lg:h-[500px] object-cover">
+        </div>
+
+
+        <div class="swiper-slide hidden">
+            <img src="./imges/nature-1.6.jpg"
+                class="w-full h-[250px] md:h-[400px] lg:h-[500px] object-cover">
+        </div>
+
+
+        <div class="swiper-slide hidden">
+            <img src="./imges/nature-1.7.jpg"
+                class="w-full h-[250px] md:h-[400px] lg:h-[500px] object-cover">
+        </div>
+
+
+        <div class="swiper-slide hidden">
+            <img src="./imges/tree-img.jpg"
+                class="w-full h-[250px] md:h-[400px] lg:h-[500px] object-cover">
+        </div>
+
+         <div class="swiper-slide hidden">
+            <img src="./imges/horse-img-2.jpg"
+                class="w-full h-[250px] md:h-[400px] lg:h-[500px] object-cover">
+        </div>
+
+
+
+        <button
+            class="swiper-button-prev absolute left-3 top-1/2  bg-black/50 hover:bg-black text-white w-10 h-10 rounded-full text-2xl">
+            ❮
+        </button>
+
+
+        <button
+            class="swiper-button-next absolute right-3 top-1/2  bg-black/50 hover:bg-black text-white w-10 h-10 rounded-full text-2xl">
+            ❯
+        </button>
+
+    </section>
+
+
+    <script src="3.js"></script>
+  </body>
+</html>
