@@ -30,7 +30,7 @@ console.log(" shift element : - to remove element from first - 1000 - remove 100
 arr.splice(1,2) //  index 1 થી 2 elements remove
 console.log( " splice element : - to remove element - first index -20 and second index - 30   "  , arr);
 
-//6. slice() → copy part (no change in original) - to convert in string
+//6. slice() → copy part (no change in original) - 
 
 // console.log("10, 40, 50, 60, 70, 80") 
 
@@ -84,11 +84,11 @@ console.log (" foreach function -  internal process - to change internaly");
 
 // 80, 70, 60, 50, 40, 10 
 
-const arr8 = arr.forEach((arr8) => console.log(arr8));
+const arr8 = arr.forEach((arr9) => console.log(arr9));
 
 //14. filter - to check condition
 
-const arr9 = array.filter((array) => array > 110);
+const arr9 = array.filter((arr14) => arr14 > 110);
 console.log(" filter function - to check condition " , arr9);
 
 //15 . include -  to check the value 
