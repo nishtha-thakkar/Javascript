@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Muli&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+
+<!-- Top Header -->
+<div class="w-full border-b border-gray-100 bg-white">
+  <div class="max-w-[1200px] mx-auto px-4 py-3 
+              flex flex-col gap-3 
+              sm:flex-row sm:justify-between sm:items-center">
+
+    <!-- Left side -->
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6 text-sm text-gray-500">
+      <p class="flex items-center gap-2">
+        <i class="fa-solid fa-mobile-screen-button text-rose-400"></i>
+        <span>+0123456789</span>
+      </p>
+
+      <p class="flex items-center gap-2">
+        <i class="fa-regular fa-envelope text-rose-400"></i>
+        <span>Example@Gmail.Com</span>
+      </p>
+    </div>
+
+    <!-- Right side -->
+    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+      <a href="#" class="flex items-center gap-2 hover:text-rose-500">
+        <i class="fa-regular fa-user text-rose-400"></i>
+        <span>My Account</span>
+      </a>
+
+      <a href="#" class="flex items-center gap-2 hover:text-rose-500">
+        <i class="fa-solid fa-book-open text-rose-400"></i>
+        <span>Language</span>
+        <i class="fa-solid fa-angle-down text-xs"></i>
+      </a>
+
+      <a href="#" class="flex items-center gap-2 hover:text-rose-500">
+        <i class="fa-solid fa-dollar-sign text-rose-400"></i>
+        <span>Currency</span>
+        <i class="fa-solid fa-angle-down text-xs"></i>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+
+<!--         navbar               -->
+
+
+<nav class="bg-white shadow-sm relative z-50">
+
+  <div class="max-w-[1200px] mx-auto px-4">
+
+    <div class="flex items-center justify-between h-24">
+
+      <!-- Logo -->
+      <div>
+        <h1 class="text-4xl font-bold text-[#ff4f6d]">
+            <img src="./images-home-page/logo-navbar.png" alt="">
+        
+        </h1>
+        
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul
+      id="desktopMenu"
+      class="hidden lg:flex items-center gap-8 font-medium">
+      </ul>
+
+      <!-- Right Icons -->
+      <div class="hidden lg:flex items-center gap-4">
+
+        <button
+        class="w-12 h-12 rounded-full bg-[#ff4f6d] text-white">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <div class="relative group">
+
+          <button
+          class="w-12 h-12 rounded-full bg-gray-100">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+
+          <span
+          class="absolute -top-2 right-0 text-sm">
+            2
+          </span>
+
+          <!-- Cart Dropdown -->
+
+          <div
+          class="absolute right-0 top-14 w-[320px]
+          bg-white shadow-xl
+          opacity-0 invisible
+          group-hover:opacity-100
+          group-hover:visible
+          transition-all duration-300 z-50">
+
+            <div class="p-4 border-b flex gap-3">
+              <img
+              src="https://themewagon.github.io/eshopper/img/product-1.jpg"
+              class="w-16 h-16">
+
+              <div>
+                <h4>This is Product Name</h4>
+                <p>1 x $25.00</p>
+              </div>
+            </div>
+
+            <div class="p-4 border-b flex gap-3">
+              <img
+              src="https://themewagon.github.io/eshopper/img/product-2.jpg"
+              class="w-16 h-16">
+
+              <div>
+                <h4>This is Product Name</h4>
+                <p>1 x $25.00</p>
+              </div>
+            </div>
+
+            <div class="p-4">
+              <h3 class="font-bold mb-4">
+                Subtotal $50.00
+              </h3>
+
+              <button
+              class="w-full bg-[#ff4f6d]
+              text-white py-3 rounded-full">
+                Checkout
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Mobile Button -->
+      <button
+      id="menuBtn"
+      class="lg:hidden text-3xl">
+        ☰
+      </button>
+
+    </div>
+
+    <!-- Mobile Menu -->
+
+    <ul
+    id="mobileMenu"
+    class="hidden lg:hidden pb-6 space-y-4">
+    </ul>
+
+  </div>
+
+</nav>
+
+
+<!--   Hero section   -->
+
+
+<section id="heroSlider" class="relative w-full h-[450px] md:h-[600px] overflow-hidden">
+    
+</section>
+
+
+ <!-- 3-rd-section  shoes ,watch , purse -->
+
+    <div id="card-container"
+  class="main-div-card flex justify-center gap-6 md:gap-8 lg:gap-10 pt-10 md:pt-16 lg:pt-20 flex-wrap px-4">
+</div>
+
+
+
+<!-- 4 sec :  product div -->
+
+
+<section class="bg-gray-100 min-h-screen mt-20">
+  <h1 class="text-4xl font-bold text-center py-8 ">Our Product</h1>
+
+  <div
+    id="container"
+    class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pt-10  "
+  ></div>
+</section>
+
+
+
+
+<!-- 5 sec - Winter Flash Sale -->
+<section class="pt-10 md:mt-20">
+  <div
+    class="main-div flex flex-col lg:flex-row justify-center items-center gap-16 overflow-hidden bg-gray-200 pb-14 pt-10 px-4">
+
+    <!-- Image will come from JS -->
+    <div id="imageContainer"></div>
+
+    <!-- Content -->
+    <div class="text-div max-w-[500px] text-center lg:text-left">
+
+      <p class="text-[16px] text-[#777] font-[Muli]">
+        Hurry Up! Offer Ends in
+      </p>
+
+      <p
+        class="text-[22px] md:text-[26px] text-red-500 font-[Poppins] pt-1">
+        WINTER FLASH SALE END SOON
+      </p>
+
+      <p class="pt-2 text-[#777]">
+        Lorem Ipsum is simply dummy text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy Lorem Ipsum
+      </p>
+
+      <!-- Timer will come from JS -->
+      <div
+        id="timerContainer"
+        class="main-div-clock flex flex-wrap justify-center lg:justify-start gap-4 pt-6">
+      </div>
+
+      <!-- Button -->
+      <div class="pt-9 flex justify-center lg:justify-start">
+        <button
+          class="text-white bg-red-500 px-4 py-2 hover:bg-red-600 transition duration-300">
+          Shop Now
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- 6 sec :  product div -->
+
+
+<section class="bg-gray-100 min-h-screen md:mt-20 mt-10">
+  <h1 class="text-4xl font-bold text-center py-8 ">Our Product</h1>
+
+  <div
+    id="container2"
+    class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pt-10  "
+  ></div>
+</section>
+
+
+
+<!--  7 sec - black- background-sec --> 
+
+
+<section class="relative mt-20 ">
+
+  <!-- Background Image -->
+   <div class="w-full h-[650px] sm:h-[550px] md:h-[500px]">
+    <img
+      id="bgImage"
+      class="w-full h-full object-cover"
+      src="./images-home-page/black-backgeound img.jpg"
+      alt=""
+    >
+  </div>
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/80 md:h-[500px]"></div>
+
+  <!-- Content -->
+  <div class="absolute inset-0 flex justify-center items-center flex-col px-4">
+
+    <!-- Testimonial Text -->
+   <p
+      id="slideText"
+      class="
+      w-[75%]
+      sm:w-[80%]
+      md:max-w-[700px]
+      text-center
+      text-white
+      text-sm
+      sm:text-base
+      md:text-[20px]
+      leading-relaxed
+      "
+    ></p>
+
+    <!-- Profile Section -->
+     <div class="flex items-center gap-3 sm:gap-4 pt-8">
+
+      <div class="h-[50px] w-[50px] sm:h-[60px] sm:w-[60px] rounded-full overflow-hidden">
+        <img
+          id="slideImage"
+          class="w-full h-full object-cover"
+          src=""
+          alt=""
+        >
+      </div>
+
+      <div>
+        <p class="text-red-500 text-sm sm:text-[15px]">
+          <span id="slideName"></span> -
+          <span id="slideCompany" class="text-white"></span>
+        </p>
+      </div>
+
+    </div>
+
+  </div> 
+
+  <!-- Prev Button -->
+   <button
+    id="prev"
+    class="
+    absolute
+    left-2 sm:left-4 md:left-5
+    top-1/2
+    -translate-y-1/2
+    bg-white/20
+    hover:bg-white/40
+    text-white
+    w-8 h-8
+    sm:w-10 sm:h-10
+    md:w-12 md:h-12
+    rounded-full
+    text-lg sm:text-xl
+    flex items-center justify-center
+    "
+  >
+    ❮
+  </button> 
+
+  <!-- Next Button -->
+<button
+    id="next"
+    class="
+    absolute
+    right-2 sm:right-4 md:right-5
+    top-1/2
+    -translate-y-1/2
+    bg-white/20
+    hover:bg-white/40
+    text-white
+    w-8 h-8
+    sm:w-10 sm:h-10
+    md:w-12 md:h-12
+    rounded-full
+    text-lg sm:text-xl
+    flex items-center justify-center
+    "
+  >
+    ❯
+  </button> 
+
+  </section> 
+
+
+  <!--   8 sec - our blog  -->
+
+  <section class="our-blog pt-20 mb-20 md:px-20 ">
+
+    <div class="3-para  ">
+      <p class="text-gray-400 text-center font-[Muli] text-[15px]">Latest News from blog</p>
+      <p class="text-[25px] font-bold text-center mt-2">OUR BLOG</p>
+    </div>
+
+<div class="flex items-center justify-center mt-4">
+
+  <span class="w-5 h-[2px] bg-gray-300"></span>
+
+  <span class="w-[10px] h-[10px] bg-pink-500 mx-1"></span>
+
+  <span class="w-5 h-[2px] bg-gray-300"></span>
+
+</div>
+
+ <!-- Cards Container -->
+    <div
+      id="blogCards"
+      class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-7">
+    </div>
+
+  </section>
+
+
+  <!-- 9 sec - all img sec -->
+
+  <section class="bg-gray-100 py-16 md:px-20">
+  <div
+    id="logoContainer"
+    class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+  </div>
+</section>
+
+
+<!-- 10 -sec  fre-shipping ,cash on delivery sec -->
+
+<div
+  id="serviceContainer"
+  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:mt-20 mt-10 md:px-20"
+>
+</div>
+
+
+<!--   11 sec - footer    -->
+
+<div id="footerContainer" class="mt-10 pt-20"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="main.js"></script> 
+
+  </body>
+</html>
