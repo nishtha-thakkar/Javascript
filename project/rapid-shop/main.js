@@ -1,232 +1,40 @@
-//     navbar      //
+//  navbar //
 
+import { renderNavbar } from "./navbar.js";
 
-const navItems = [
-  {
-    title: "HOME",
-  },
-
-  {
-    title: "SHOP",
-    dropdown: [
-      "PRODUCT DETAILS",
-      "CART",
-      "CHECKOUT",
-      "WISHLIST",
-      "ACCOUNT",
-    ],
-  },
-
-  {
-    title: "MEN",
-    mega: true,
-  },
-
-  {
-    title: "WOMEN",
-    mega: true,
-  },
-
-  {
-    title: "PAGES",
-    dropdown: [
-      "LEFT SIDEBAR BLOG",
-      "RIGHT SIDEBAR BLOG",
-      "FULL WIDTH BLOG",
-      "BLOG DETAILS",
-      "ABOUT US",
-      "CONTACT US",
-      "404 PAGE",
-    ],
-  },
-
-  {
-    title: "CONTACT",
-  },
-];
-
-const desktopMenu =
-document.getElementById("desktopMenu");
-
-desktopMenu.innerHTML =
-navItems.map((item)=>{
-
-if(item.dropdown){
-
-return `
-<li class="relative group">
-
-<a href="#"
-class="hover:text-[#ff4f6d] flex items-center gap-1">
-${item.title}
-</a>
-
-<ul
-class="
-absolute top-full left-0
-w-60 bg-white shadow-lg
-
-opacity-0 invisible
-group-hover:opacity-100
-group-hover:visible
-
-transition-all duration-300
-">
-
-${item.dropdown.map(sub => `
-
-<li class="hover:bg-gray-100">
-
-<a href="shop.html"
-class="block px-6 py-3">
-
-${sub}
-
-</a>
-
-</li>
-
-`).join("")}
-
-</ul>
-
-</li>
-`;
-}
-
-if(item.mega){
-
-return `
-<li class="relative group">
-
-<a href="#"
-class="hover:text-[#ff4f6d] flex items-center gap-1">
-${item.title}
-</a>
-
-<div
-class="
-absolute top-full left-[-200px]
-bg-white shadow-xl
-
-w-[850px]
-
-grid grid-cols-4
-gap-10
-
-p-8
-
-opacity-0 invisible
-group-hover:opacity-100
-group-hover:visible
-
-transition-all duration-300
-">
-
-${[1,2,3,4].map(()=>`
-
-<div>
-
-<h3
-class="font-semibold mb-4 border-b pb-2">
-CATEGORY
-</h3>
-
-<ul class="space-y-3 text-gray-500">
-
-<li>BLAZERS</li>
-<li>JACKETS</li>
-<li>COLLECTIONS</li>
-<li>T-SHIRTS</li>
-<li>JENS PANT'S</li>
-<li>SPORTS SHOES</li>
-
-</ul>
-
-</div>
-
-`).join("")}
-
-</div>
-
-</li>
-`;
-}
-
-return `
-<li>
-
-<a href="#"
-class="hover:text-[#ff4f6d] flex items-center gap-1">
-${item.title}
-</a>
-
-</li>
-`;
-
-}).join("");
-
-
-
-const mobileMenu =
-document.getElementById("mobileMenu");
-
-mobileMenu.innerHTML =
-navItems.map(item=>`
-
-<li>
-<a href="#">
-${item.title}
-</a>
-</li>
-
-`).join("");
-
-
-
-const menuBtn =
-document.getElementById("menuBtn");
-
-menuBtn.addEventListener("click",()=>{
-
-mobileMenu.classList.toggle("hidden");
-
-});
-
+renderNavbar();
 
 //   Hero section   //
-
-
-
 
 const slides1 = [
   {
     badge: "New Year 2026",
     title: "BEST SHOPPING",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae posuere est Sed placerat ligula",
-    img: "./images-home-page/hero-sec-1-img.jpg"
+    img: "./images-home-page/hero-sec-1-img.jpg",
   },
   {
     badge: "Women Fashion",
     title: "NEW COLLECTION",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae posuere est Sed placerat ligula",
-    img: "./images-home-page/her-sec-2-img.jpg"
+    img: "./images-home-page/her-sec-2-img.jpg",
   },
   {
     badge: "Men Collection",
     title: "NEW COLLECTION",
     desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae posuere est Sed placerat ligula",
-    img: "./images-home-page/hero-img-3.jpg"
-  }
+    img: "./images-home-page/hero-img-3.jpg",
+  },
 ];
 
 const heroSlider = document.getElementById("heroSlider");
 let currentSlide = 0;
 
 function showSlide(index) {
-  heroSlider.innerHTML = slides1.map((slide, i) => {
-    return `
-      <div class="${i === index ? 'block' : 'hidden'} relative w-full h-full">
+  heroSlider.innerHTML = slides1
+    .map((slide, i) => {
+      return `
+      <div class="${i === index ? "block" : "hidden"} relative w-full h-full">
 
         <img 
           src="${slide.img}" 
@@ -269,7 +77,8 @@ function showSlide(index) {
 
       </div>
     `;
-  }).join("");
+    })
+    .join("");
 
   heroSlider.innerHTML += `
     <button onclick="prevSlide()" 
@@ -283,11 +92,15 @@ function showSlide(index) {
     </button>
 
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-      ${slides1.map((_, i) => `
+      ${slides1
+        .map(
+          (_, i) => `
         <button onclick="goToSlide(${i})"
-          class="w-8 h-2 ${i === index ? 'bg-[#ff4f6d]' : 'bg-white'}">
+          class="w-8 h-2 ${i === index ? "bg-[#ff4f6d]" : "bg-white"}">
         </button>
-      `).join("")}
+      `,
+        )
+        .join("")}
     </div>
   `;
 }
@@ -319,8 +132,6 @@ setInterval(() => {
   nextSlide();
 }, 3000);
 
-
-
 //  3 sec- watch,shoes , purse
 
 const cardData = [
@@ -328,25 +139,27 @@ const cardData = [
     image: "./images-home-page/shoes-photo.jpg",
     title: "Shoes",
     collection: "2026 Collection",
-    offer: "You Will Love Upto 60% Off"
+    offer: "You Will Love Upto 60% Off",
   },
   {
     image: "./images-home-page/watch.jpg",
     title: "Watch",
     collection: "Sprint Collection",
-    offer: "You Will Love Upto 50% Off"
+    offer: "You Will Love Upto 50% Off",
   },
   {
     image: "./images-home-page/purse.jpg",
     title: "Bags",
     collection: "Exclusive Design",
-    offer: "You Will Love Upto 20% Off"
-  }
+    offer: "You Will Love Upto 20% Off",
+  },
 ];
 
 const contaant = document.getElementById("card-container");
 
-contaant.innerHTML = cardData.map(card => `
+contaant.innerHTML = cardData
+  .map(
+    (card) => `
   <div class="group relative h-[250px] w-full sm:w-[300px] md:w-[330px] md:h-[330px] overflow-hidden">
 
     <img
@@ -395,14 +208,14 @@ contaant.innerHTML = cardData.map(card => `
     </div>
 
   </div>
-`).join("");
-
+`,
+  )
+  .join("");
 
 // 4 sec - all products
 
-
 const container = document.getElementById("container");
-const container2 = document.getElementById("container2")
+const container2 = document.getElementById("container2");
 
 const fetchAPI = async () => {
   try {
@@ -414,7 +227,7 @@ const fetchAPI = async () => {
 
     const data = await res.json();
 
-    renderData(data.products.slice(0,8));
+    renderData(data.products.slice(0, 8));
   } catch (error) {
     console.log(error);
   }
@@ -482,11 +295,10 @@ fetchAPI();
 
 const saleData = {
   image: "./images-home-page/man-3-3.png",
-  discount: "40%"
+  discount: "40%",
 };
 
-const imageContainer =
-  document.getElementById("imageContainer");
+const imageContainer = document.getElementById("imageContainer");
 
 imageContainer.innerHTML = `
   <div
@@ -508,35 +320,32 @@ imageContainer.innerHTML = `
   </div>
 `;
 
-
-
 // TIMER BOX DATA
-
 
 const timerData = [
   {
     id: "daysVal",
-    label: "Days"
+    label: "Days",
   },
   {
     id: "hoursVal",
-    label: "Hours"
+    label: "Hours",
   },
   {
     id: "minVal",
-    label: "Minutes"
+    label: "Minutes",
   },
   {
     id: "secVal",
-    label: "Seconds"
-  }
+    label: "Seconds",
+  },
 ];
 
-const timerContainer =
-  document.getElementById("timerContainer");
+const timerContainer = document.getElementById("timerContainer");
 
-timerContainer.innerHTML =
-  timerData.map(item => `
+timerContainer.innerHTML = timerData
+  .map(
+    (item) => `
     <div
       class="rounded-full h-[70px] w-[70px] md:h-[80px] md:w-[80px] bg-white flex flex-col justify-center items-center">
 
@@ -551,82 +360,74 @@ timerContainer.innerHTML =
       </p>
 
     </div>
-  `).join("");
-
-
+  `,
+  )
+  .join("");
 
 // COUNTDOWN TIMER
 
-
-const targetDate =
-  new Date("December 31, 2028 00:00:00").getTime();
+const targetDate = new Date("December 31, 2028 00:00:00").getTime();
 
 function updateTimer() {
-
   const now = new Date().getTime();
 
   const distance = targetDate - now;
 
-  const days = Math.floor(
-    distance / (1000 * 60 * 60 * 24)
-  );
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
   const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24))
-    / (1000 * 60 * 60)
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
   );
 
-  const minutes = Math.floor(
-    (distance % (1000 * 60 * 60))
-    / (1000 * 60)
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("daysVal").textContent = days;
+
+  document.getElementById("hoursVal").textContent = String(hours).padStart(
+    2,
+    "0",
   );
 
-  const seconds = Math.floor(
-    (distance % (1000 * 60))
-    / 1000
+  document.getElementById("minVal").textContent = String(minutes).padStart(
+    2,
+    "0",
   );
 
-  document.getElementById("daysVal").textContent =
-    days;
-
-  document.getElementById("hoursVal").textContent =
-    String(hours).padStart(2, "0");
-
-  document.getElementById("minVal").textContent =
-    String(minutes).padStart(2, "0");
-
-  document.getElementById("secVal").textContent =
-    String(seconds).padStart(2, "0");
+  document.getElementById("secVal").textContent = String(seconds).padStart(
+    2,
+    "0",
+  );
 }
 
 updateTimer();
 
 setInterval(updateTimer, 1000);
 
-
-// !-- 7 sec - black- background-sec --> 
+// !-- 7 sec - black- background-sec -->
 
 const slides2 = [
   {
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim magni neque nisi consectetur quisquam possimus repellendus, quidem cumque sed iusto maiores quam voluptatem laboriosam ipsa dolorum nihil.",
     name: "Michel",
     company: "Themesvila",
-    image: "./images-home-page/black-back-man-img.jpg"
+    image: "./images-home-page/black-back-man-img.jpg",
   },
 
   {
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim magni neque nisi consectetur quisquam possimus repellendus, quidem cumque sed iusto maiores quam voluptatem laboriosam ipsa dolorum nihil.",
     name: "John",
     company: "Creative Studio",
-    image: "./images-home-page/background-black-man-2-img.jpg"
+    image: "./images-home-page/background-black-man-2-img.jpg",
   },
 
   {
     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim magni neque nisi consectetur quisquam possimus repellendus, quidem cumque sed iusto maiores quam voluptatem laboriosam ipsa dolorum nihil.",
     name: "David",
     company: "Tech World",
-    image: "./images-home-page/black-background-girl-img.jpg"
-  }
+    image: "./images-home-page/black-background-girl-img.jpg",
+  },
 ];
 
 let current1 = 0;
@@ -636,13 +437,10 @@ const slideImage = document.getElementById("slideImage");
 const slideName = document.getElementById("slideName");
 const slideCompany = document.getElementById("slideCompany");
 
-
 function showSlide1(index) {
-
   current1 = index;
 
   console.log(slides2[index].company);
-
 
   slideText.innerHTML = slides2[index].text;
   slideImage.src = slides2[index].image;
@@ -660,7 +458,6 @@ document.getElementById("prev").addEventListener("click", () => {
   showSlide1((current1 - 1 + slides2.length) % slides2.length);
 });
 
-
 // 8 sec -   our blog   //
 
 const blogs = [
@@ -671,7 +468,7 @@ const blogs = [
     comments: 2,
     views: 12,
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    desc: "Proin in blandit lacus. Nam pellentesque tortor eget dui feugiat venenatis ...."
+    desc: "Proin in blandit lacus. Nam pellentesque tortor eget dui feugiat venenatis ....",
   },
 
   {
@@ -681,7 +478,7 @@ const blogs = [
     comments: 2,
     views: 18,
     title: "Phasellus Pellentesque Viverra Metus,id Euismod Hendrerit",
-    desc: "Proin in blandit lacus. Nam pellentesque tortor eget dui feugiat venenatis ....."
+    desc: "Proin in blandit lacus. Nam pellentesque tortor eget dui feugiat venenatis .....",
   },
 
   {
@@ -691,12 +488,14 @@ const blogs = [
     comments: 2,
     views: 12,
     title: "Nulla Sit Amet Pellentesque Nisl, Non Ultrices Nisl. Vivamus Quis",
-    desc: "Proin in blandit lacus. Nam pellentesque tortor eget dui feugiat venenatis ....."
-  }
+    desc: "Proin in blandit lacus. Nam pellentesque tortor eget dui feugiat venenatis .....",
+  },
 ];
 const blogCards = document.getElementById("blogCards");
 
-blogCards.innerHTML = blogs.map((blog) => `
+blogCards.innerHTML = blogs
+  .map(
+    (blog) => `
   
 <div class="bg-white border overflow-hidden">
 
@@ -750,12 +549,11 @@ blogCards.innerHTML = blogs.map((blog) => `
 
 </div>
 
-`).join("");
-
-
+`,
+  )
+  .join("");
 
 // 9 - sec  all-img sec //
-
 
 const logos = [
   "./images-home-page/hipsar-1.png",
@@ -763,73 +561,79 @@ const logos = [
   "./images-home-page/retro-3.png",
   "./images-home-page/creative-designs-4.png",
   "./images-home-page/cratives-6.png",
-  "./images-home-page/vintage-6-2.png"
+  "./images-home-page/vintage-6-2.png",
 ];
 
 const logoContainer = document.getElementById("logoContainer");
 
-logoContainer.innerHTML = logos.map(logo => `
+logoContainer.innerHTML = logos
+  .map(
+    (logo) => `
   <div class="flex justify-center">
     <img
       src="${logo}"
       alt="brand logo"
       class="w-[140px] opacity-60 hover:opacity-100 transition duration-300">
   </div>
-`).join("");
+`,
+  )
+  .join("");
 
-
-//  10 - sec : fre-shipping ,cash on delivery sec 
+//  10 - sec : fre-shipping ,cash on delivery sec
 
 const services = [
   {
     icon: "fa-solid fa-truck",
     title: "Free Shipping",
-    desc: "Best Shipping Service"
+    desc: "Best Shipping Service",
   },
   {
     icon: "fa-regular fa-credit-card",
     title: "Cash On Delivery",
-    desc: "Fast Delivery Method"
+    desc: "Fast Delivery Method",
   },
   {
     icon: "fa-solid fa-headset",
     title: "Support 24/7",
-    desc: "24 Hours a Day"
+    desc: "24 Hours a Day",
   },
   {
     icon: "fa-regular fa-clock",
     title: "30 Days Return",
-    desc: "Simply Return 30 Days"
-  }
+    desc: "Simply Return 30 Days",
+  },
 ];
 
 const serviceContainer = document.getElementById("serviceContainer");
 
-serviceContainer.innerHTML = services.map((service) => `
+serviceContainer.innerHTML = services
+  .map(
+    (service) => `
   <div class="border border-gray-200 h-48 flex flex-col items-center justify-center text-center">
     <i class="${service.icon} text-red-400 text-3xl mb-4"></i>
     <h3 class="text-xl font-semibold">${service.title}</h3>
     <p class="text-gray-400 text-sm mt-2">${service.desc}</p>
   </div>
-`).join("");
+`,
+  )
+  .join("");
 
-
-//  11 sec - footer // 
+//  11 sec - footer //
 
 const footerData = {
   contacts: [
     {
       icon: "fa-location-dot",
-      text: `4060 Reppert Coal Road Jackson,<br>MS 39201 USA`
+      text: `4060 Reppert Coal Road Jackson,<br>MS 39201 USA`,
     },
     {
       icon: "fa-mobile-screen",
-      text: `(+123) 685 78<br>(+064) 987 245`
+      text: `(+123) 685 78<br>(+064) 987 245`,
     },
     {
       icon: "fa-message",
-      text: `contact@yoursite.com<br>support@yoursite.com`
-    }
+      text: `contact@yoursite.com<br>support@yoursite.com`,
+    },
   ],
 
   information: [
@@ -837,37 +641,28 @@ const footerData = {
     "Delivery Information",
     "Privacy Policy",
     "Terms & Condition",
-    "Contact Us"
+    "Contact Us",
   ],
 
-  services: [
-    "Returns",
-    "Site Map",
-    "Wish List",
-    "My Account",
-    "Order History"
-  ],
+  services: ["Returns", "Site Map", "Wish List", "My Account", "Order History"],
 
   socialIcons: [
     "facebook-f",
     "pinterest-p",
     "linkedin-in",
     "twitter",
-    "instagram"
+    "instagram",
   ],
 
   payments: [
     "./images-home-page/visa-png.png",
     "./images-home-page/master-card.png",
     "./images-home-page/american-express.png",
-    "./images-home-page/apple-pay.png"
-  ]
+    "./images-home-page/apple-pay.png",
+  ],
 };
 
-
-
-const footerContainer =
-document.getElementById("footerContainer");
+const footerContainer = document.getElementById("footerContainer");
 
 footerContainer.innerHTML = `
 
@@ -885,12 +680,16 @@ Contacts
 
 <ul class="space-y-6">
 
-${footerData.contacts.map(item => `
+${footerData.contacts
+  .map(
+    (item) => `
 <li class="text-white leading-7">
 <i class="fa-solid ${item.icon} mr-2"></i>
 ${item.text}
 </li>
-`).join("")}
+`,
+  )
+  .join("")}
 
 </ul>
 
@@ -906,11 +705,15 @@ Information
 
 <ul class="text-white space-y-5">
 
-${footerData.information.map(item => `
+${footerData.information
+  .map(
+    (item) => `
 <li class="hover:text-red-500 cursor-pointer">
 ${item}
 </li>
-`).join("")}
+`,
+  )
+  .join("")}
 
 </ul>
 
@@ -926,11 +729,15 @@ Services
 
 <ul class="text-white space-y-5">
 
-${footerData.services.map(item => `
+${footerData.services
+  .map(
+    (item) => `
 <li class="hover:text-red-500 cursor-pointer">
 ${item}
 </li>
-`).join("")}
+`,
+  )
+  .join("")}
 
 </ul>
 
@@ -977,7 +784,9 @@ class="bg-pink-500 px-6 text-white">
 
 <ul class="flex gap-3 flex-wrap">
 
-${footerData.socialIcons.map(icon => `
+${footerData.socialIcons
+  .map(
+    (icon) => `
 <li>
 <a href=""
 class="w-10 h-10 rounded-full border border-[#ffffff26] flex items-center justify-center text-[#B7B7B7] hover:bg-pink-500 hover:text-white">
@@ -986,7 +795,9 @@ class="w-10 h-10 rounded-full border border-[#ffffff26] flex items-center justif
 
 </a>
 </li>
-`).join("")}
+`,
+  )
+  .join("")}
 
 </ul>
 
@@ -1000,12 +811,16 @@ Copyright © 2026 RapidShop, All rights Reserved.
 
 <div class="flex flex-wrap">
 
-${footerData.payments.map(img => `
+${footerData.payments
+  .map(
+    (img) => `
 <img
 src="${img}"
 class="w-[30px] h-[30px] bg-white p-1 rounded"
 />
-`).join("")}
+`,
+  )
+  .join("")}
 
 </div>
 
@@ -1014,16 +829,11 @@ class="w-[30px] h-[30px] bg-white p-1 rounded"
 </div>
 `;
 
-
 // footer scroll up button
 
- function scrollToTop() {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      }
-
-
-
-
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}

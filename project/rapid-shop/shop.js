@@ -1,3 +1,10 @@
+import { renderNavbar } from "./navbar.js";
+
+renderNavbar();
+
+
+
+
 const container = document.getElementById("container");
 
 const fetchAPI = async () => {
