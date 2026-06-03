@@ -1015,5 +1015,15 @@ class="w-[30px] h-[30px] bg-white p-1 rounded"
 `;
 
 
+// footer scroll up button
+
+ function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+
 
 
