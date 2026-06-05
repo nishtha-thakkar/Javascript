@@ -28,14 +28,14 @@ export function renderNavbar() {
         <div class="hidden lg:flex items-center gap-4">
 
           <button
-            class="w-12 h-12 rounded-full bg-[#ff4f6d] text-white">
+            class="w-10 h-10 rounded-full bg-[#ff4f6d] text-white">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
 
           <div class="relative group">
 
             <button
-              class="w-12 h-12 rounded-full bg-gray-100">
+              class="w-10 h-10 rounded-full bg-gray-100">
               <i class="fa-solid fa-cart-shopping"></i>
             </button>
 
@@ -122,10 +122,13 @@ export function renderNavbar() {
   const navItems = [
     {
       title: "HOME",
+      link: "main.html",
+       
     },
 
     {
       title: "SHOP",
+      link:"main.html",
       dropdown: [
         "PRODUCT DETAILS",
         "CART",
@@ -169,12 +172,24 @@ export function renderNavbar() {
   desktopMenu.innerHTML =
     navItems.map((item) => {
 
+
+      if (item.title === "HOME") {
+  return `
+    <li>
+      <a href="main.html"
+        class="hover:text-[#ff4f6d]">
+        ${item.title}
+      </a>
+    </li>
+  `;
+}
+
       if (item.dropdown) {
 
         return `
         <li class="relative group">
 
-          <a href="#"
+          <a href="${item.link || `#`}"
             class="hover:text-[#ff4f6d]">
             ${item.title}
           </a>
@@ -195,6 +210,8 @@ export function renderNavbar() {
                   class="block px-6 py-3">
                   ${sub}
                 </a>
+
+               
 
               </li>
             `).join("")}

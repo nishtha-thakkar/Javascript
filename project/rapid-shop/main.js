@@ -831,9 +831,19 @@ class="w-[30px] h-[30px] bg-white p-1 rounded"
 
 // footer scroll up button
 
-function scrollToTop() {
+// function scrollToTop() {
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth",
+//   });
+// }
+
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
-}
+});
