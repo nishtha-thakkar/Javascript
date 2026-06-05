@@ -2,9 +2,6 @@ import { renderNavbar } from "./navbar.js";
 
 renderNavbar();
 
-
-
-
 const container = document.getElementById("container");
 
 const fetchAPI = async () => {
@@ -78,7 +75,6 @@ const renderData = (products) => {
 };
 
 fetchAPI();
-
 
 //  11 sec - footer //
 
@@ -293,9 +289,11 @@ class="w-[30px] h-[30px] bg-white p-1 rounded"
 
 // footer scroll up button
 
-function scrollToTop() {
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
-}
+});

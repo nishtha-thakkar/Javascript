@@ -1,7 +1,6 @@
 // navbar.js
 
 export function renderNavbar() {
-
   const navbar = document.getElementById("navbar");
 
   navbar.innerHTML = `
@@ -123,19 +122,12 @@ export function renderNavbar() {
     {
       title: "HOME",
       link: "main.html",
-       
     },
 
     {
       title: "SHOP",
-      link:"main.html",
-      dropdown: [
-        "PRODUCT DETAILS",
-        "CART",
-        "CHECKOUT",
-        "WISHLIST",
-        "ACCOUNT",
-      ],
+      link: "main.html",
+      dropdown: ["PRODUCT DETAILS", "CART", "CHECKOUT", "WISHLIST", "ACCOUNT"],
     },
 
     {
@@ -166,15 +158,12 @@ export function renderNavbar() {
     },
   ];
 
-  const desktopMenu =
-    document.getElementById("desktopMenu");
+  const desktopMenu = document.getElementById("desktopMenu");
 
-  desktopMenu.innerHTML =
-    navItems.map((item) => {
-
-
+  desktopMenu.innerHTML = navItems
+    .map((item) => {
       if (item.title === "HOME") {
-  return `
+        return `
     <li>
       <a href="main.html"
         class="hover:text-[#ff4f6d]">
@@ -182,10 +171,9 @@ export function renderNavbar() {
       </a>
     </li>
   `;
-}
+      }
 
       if (item.dropdown) {
-
         return `
         <li class="relative group">
 
@@ -203,7 +191,9 @@ export function renderNavbar() {
             group-hover:visible
             transition-all duration-300">
 
-            ${item.dropdown.map(sub => `
+            ${item.dropdown
+              .map(
+                (sub) => `
               <li class="hover:bg-gray-100">
 
                 <a href="shop.html"
@@ -214,7 +204,9 @@ export function renderNavbar() {
                
 
               </li>
-            `).join("")}
+            `,
+              )
+              .join("")}
 
           </ul>
 
@@ -223,7 +215,6 @@ export function renderNavbar() {
       }
 
       if (item.mega) {
-
         return `
         <li class="relative group">
 
@@ -245,7 +236,9 @@ export function renderNavbar() {
             group-hover:visible
             transition-all duration-300">
 
-            ${[1,2,3,4].map(() => `
+            ${[1, 2, 3, 4]
+              .map(
+                () => `
               <div>
 
                 <h3
@@ -265,7 +258,9 @@ export function renderNavbar() {
                 </ul>
 
               </div>
-            `).join("")}
+            `,
+              )
+              .join("")}
 
           </div>
 
@@ -283,26 +278,24 @@ export function renderNavbar() {
 
       </li>
       `;
+    })
+    .join("");
 
-    }).join("");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-  const mobileMenu =
-    document.getElementById("mobileMenu");
-
-  mobileMenu.innerHTML =
-    navItems.map(item => `
+  mobileMenu.innerHTML = navItems
+    .map(
+      (item) => `
       <li>
         <a href="#">
           ${item.title}
         </a>
       </li>
-    `).join("");
+    `,
+    )
+    .join("");
 
-  document
-    .getElementById("menuBtn")
-    .addEventListener("click", () => {
-
-      mobileMenu.classList.toggle("hidden");
-
-    });
+  document.getElementById("menuBtn").addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
 }
