@@ -48,5 +48,5 @@ document.getElementById("searchBtn").addEventListener("click", () => {
     return;
   }
 
-  fetchWeather(city);
+  fetchWeather(city);``
 });
