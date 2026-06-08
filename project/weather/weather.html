@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> </title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-teal-400 to-blue-500">
+
+  <div class="bg-white w-[400px] p-8 rounded-2xl shadow-xl">
+    
+    <h1 class="text-4xl font-bold text-center mb-6">
+      Weather App
+    </h1>
+
+    <div class="flex gap-3 mb-6">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city name"
+        class="flex-1 border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+      >
+
+      <button
+        id="searchBtn"
+        class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg transition"
+      >
+        Search
+      </button>
+    </div>
+
+    <div
+      id="container"
+      class="text-center"
+    ></div>
+
+  </div>
+
+  <script src="weather.js"></script>
+
+</body>
+</html>
