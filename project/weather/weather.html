@@ -3,33 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> </title>
+  <title>Weather App</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-r from-teal-400 to-blue-500">
+<body class="min-h-screen flex items-center justify-center relative overflow-hidden">
 
-  <div class="bg-white w-[400px] p-8 rounded-2xl shadow-xl">
-    
-    <h1 class="text-4xl font-bold text-center mb-6">
+  <!-- Background Video -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="fixed top-0 left-0 w-full h-full object-cover -z-10"
+  >
+    <source src="bg-video.mp4" type="video/mp4">
+  </video>
+
+  <!-- Dark Overlay -->
+  <div class="fixed inset-0 bg-black/30 -z-10"></div>
+
+  <!-- Weather Card -->
+  <div class="bg-white/80 backdrop-blur-md w-[450px] p-8 rounded-3xl shadow-2xl">
+
+    <h1 class="text-4xl font-extrabold text-center text-blue-600 mb-8">
       Weather App
     </h1>
 
     <div class="flex gap-3 mb-6">
+
       <input
         type="text"
         id="cityInput"
         placeholder="Enter city name"
-        class="flex-1 border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+        class="flex-1 border border-gray-300 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
       >
 
       <button
         id="searchBtn"
-        class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg transition"
+        class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold transition duration-300"
       >
         Search
       </button>
+
     </div>
 
     <div

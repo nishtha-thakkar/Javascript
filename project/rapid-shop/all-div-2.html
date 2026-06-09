@@ -3,12 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Products</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    />
+
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 </head>
 <body>
-   <div id="details" class="max-w-5xl mx-auto p-6"></div>
+
+     <!--   navbar        -->
+
+   <div id="navbar"></div>
 
 
-    <script src="all-div-2.js"></script>
-    </body>
+    <div
+        id="details"
+        class="max-w-7xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 bg-gray-100"
+    ></div>
+
+
+    <!--   11 sec - footer    -->
+
+<div id="footerContainer" class="mt-10 pt-20"></div>
+
+
+
+
+      <!-- Scroll Top Button -->
+<div class="fixed bottom-5 right-5">
+  <button
+    id="scrollTopBtn"
+    class="w-10 h-10 lg:w-12 lg:h-12 bg-pink-500 rounded-full text-white lg:text-2xl text-xl hover:bg-red-500 transition"
+  >
+    <i class="fa-solid fa-angle-up"></i>
+  </button>
+</div>
+    
+
+
+
+    <script type="module" src="all-div-2.js"></script>
+
+</body>
 </html>
+
+
+<!-- -------------------------------------- -->
