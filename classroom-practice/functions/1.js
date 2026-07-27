@@ -109,7 +109,7 @@ fun();
 console.log(" ----------------------------- ");
 
 
-//10. Closure Concept (Important 🔥);or nested function // because of lexical environment we can use parent property in child  but parent can notuse property of child;
+//10. Closure Concept (Important 🔥);or nested function // because of lexical environment we can use parent property in child  but parent can not use property of child;
 
 console.log("10. Closure Concept (Important 🔥);or nested function // because oflexical environment we can use parent property in child  but parent can notuse property of child;");
 

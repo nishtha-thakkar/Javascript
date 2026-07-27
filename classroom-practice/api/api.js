@@ -7,7 +7,7 @@ const fetchAPI = async() =>{
         }
         const data = await res.json();
         console.log(data.products)
-        renderData(data.products.slice(0,8))
+        renderData(data.products)
         return data;
     }catch(error){
         console.log("EROOR :" ,error )
@@ -34,7 +34,7 @@ const renderData = (products)=> {
 
 const btn = card.querySelector("#btn")
        btn.addEventListener("click" , () => {
-      window.location.href = `all-div-2.html?id=${product.id}`;
+      window.location.href = `details.html?id=${product.id}`;
 
         
         })
